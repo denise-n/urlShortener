@@ -23,12 +23,14 @@
                     <th>Clicks</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><a href="http://www.google.ca">https://www.google.ca</a></td>
-                    <td><a href="/12345">123456</a></td>
-                    <td>10</td>
-                </tr>
+            <tbody> 
+                <% shortUrls.forEach(shortUrl => { %>
+                    <tr>
+                        <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></td>
+                        <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+                        <td><%= shortUrl.clicks %> </td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
     </div>
