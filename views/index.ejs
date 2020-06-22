@@ -21,6 +21,7 @@
                     <th>Full Url</th>
                     <th>Short Url</th>
                     <th>Clicks</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody> 
@@ -29,6 +30,11 @@
                         <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></td>
                         <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
                         <td><%= shortUrl.clicks %> </td>
+                        <td>
+                            <form action="<%= shortUrl.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>
